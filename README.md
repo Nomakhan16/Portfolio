@@ -23,5 +23,4 @@ npm run dev
 mail: nomakhanofficial@gmail.com
 Location: Lucknow, India
 
-📄 License
-MIT © Noma Khan
+
