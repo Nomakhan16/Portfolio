@@ -1,12 +1,9 @@
-// Final check for Git status
-
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { portfolioConfig } from '@/app/config';
 import { Button } from '@/app/utils/components/button';
 import Image from 'next/image';
-import { isMinimal } from '@/app/utils';
 
 interface HomeProps {
   onConnectClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
@@ -19,7 +16,7 @@ const Home: React.FC<HomeProps> = ({ onConnectClick }) => {
   const [currentPhrase, setCurrentPhrase] = useState(0);
 
   useEffect(() => {
-    if (isMinimal) return;
+    // Removed the isMinimal check to ensure animation runs on all screens
     if (index < config.typingTexts[currentPhrase].length) {
       const timeout = setTimeout(() => {
         setText(prev => prev + config.typingTexts[currentPhrase][index]);
@@ -86,22 +83,13 @@ const Home: React.FC<HomeProps> = ({ onConnectClick }) => {
               className="h-12 mb-8 overflow-hidden"
             >
               <div className="relative h-full flex items-center justify-center lg:justify-start">
-                {isMinimal ? (
-                  <span className="text-xl sm:text-2xl text-muted-foreground flex justify-center flex-wrap">
-                    <span className="mr-2">I&apos;m passionate about</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                      {config.typingTexts[0]}
-                    </span>
+                <span className="text-xl sm:text-2xl text-muted-foreground flex flex-wrap">
+                  <span className="mr-2">I&apos;m passionate about</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                    {text}
                   </span>
-                ) : (
-                  <span className="text-xl sm:text-2xl text-muted-foreground flex flex-wrap">
-                    <span className="mr-2">I&apos;m passionate about</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                      {text}
-                    </span>
-                    <span className="animate-blink ml-1 h-6 w-0.5 bg-accent self-center"></span>
-                  </span>
-                )}
+                  <span className="animate-blink ml-1 h-6 w-0.5 bg-accent self-center"></span>
+                </span>
               </div>
             </motion.div>
 
