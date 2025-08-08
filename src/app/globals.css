@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme (default) - Earthy Tones */
+    --background: 30 14% 96%;
+    --foreground: 240 10% 4%;
+    --card: 30 15% 90%;
+    --card-foreground: 240 10% 4%;
+    --popover: 30 15% 90%;
+    --popover-foreground: 240 10% 4%;
+    --primary: 40 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 60% 85%;
+    --secondary-foreground: 240 10% 4%;
+    --muted: 30 10% 85%;
+    --muted-foreground: 240 5% 50%;
+    --accent: 40 95% 45%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 12% 80%;
+    --input: 30 12% 80%;
+    --ring: 40 80% 55%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark Theme */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+    --card: 240 6% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 6% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 40 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 40 95% 45%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 20%;
+    --input: 240 6% 12%;
+    --ring: 40 80% 55%;
+  }
+}
+
+/* Fix for any animations that might cause overflow */
+.motion-safe\:animate-none {
+  animation: none !important;
+}
+
+/* Ensure container widths are contained */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reduce-motion {
+    transition-duration: 0.1s !important;
+    animation-duration: 0.1s !important;
+  }
+
+  .no-hover-effect {
+    transform: none !important;
+    transition: none !important;
+  }
+}
